@@ -53,8 +53,11 @@ class OtpLimiterServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'otp-limiter');
 
         // Register the main class to use with the facade
-        $this->app->singleton('otp-limiter', function () {
-            return new OtpLimiter;
+        $this->app->bind('otp-limiter', function ($app) {
+            return new OtpLimiter(
+                $app->make('cache'),
+                $app->make('config')
+            );
         });
     }
 }
