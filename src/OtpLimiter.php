@@ -49,7 +49,6 @@ class OtpLimiter
     public function remained(string $key): int
     {
         if ($time = $this->getTime($key)) {
-//            dd($time->diffInSeconds(now()));
             return $time->diffInSeconds(now());
         }
 
@@ -67,11 +66,15 @@ class OtpLimiter
         return Arr::get($this->config, 'custom.otp-rate-limiter', 60 * 3);
     }
 
-    public function throw(string $key)
+    public function throw(string $key): void
     {
-        if ($exception = $this->getException()) {
-            throw new $exception($key, $this->remained($key));
+        $exception = $this->getException();
+
+        if (is_null($exception)) {
+            return;
         }
+
+        throw new $exception($key, $this->remained($key));
     }
 
     protected function getException(): ?string

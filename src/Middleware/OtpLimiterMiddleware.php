@@ -17,7 +17,7 @@ class OtpLimiterMiddleware
         $this->otpLimiter = $otpLimiter;
     }
 
-    public function handle(Request $request, Closure $next, ...$params)
+    public function handle(Request $request, Closure $next, ...$params): void
     {
         $key = $this->getKey($request, $params);
 

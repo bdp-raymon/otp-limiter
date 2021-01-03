@@ -6,6 +6,7 @@ namespace Raymon\OtpLimiter\Tests;
 
 use Illuminate\Http\Request;
 use Orchestra\Testbench\TestCase;
+use Raymon\OtpLimiter\Exceptions\OtpRequestExceededException;
 use Raymon\OtpLimiter\Middleware\OtpLimiterMiddleware;
 use Raymon\OtpLimiter\OtpLimiter;
 use Raymon\OtpLimiter\OtpLimiterServiceProvider;
@@ -43,7 +44,7 @@ class MiddlewareTest extends TestCase
 
         $middleware = new OtpLimiterMiddleware($this->otpLimiter());
 
-        $this->expectException(\Exception::class);
+        $this->expectException(OtpRequestExceededException::class);
 
         $middleware->handle($request, function ($request) {}, 'username');
     }

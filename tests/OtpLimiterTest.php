@@ -5,6 +5,7 @@ namespace Raymon\OtpLimiter\Tests;
 
 
 use Orchestra\Testbench\TestCase;
+use Raymon\OtpLimiter\Exceptions\OtpRequestExceededException;
 use Raymon\OtpLimiter\OtpLimiter;
 use Raymon\OtpLimiter\OtpLimiterServiceProvider;
 
@@ -54,7 +55,7 @@ class OtpLimiterTest extends TestCase
 
     public function test_throw_exception()
     {
-        $this->expectException(\Exception::class);
+        $this->expectException(OtpRequestExceededException::class);
 
         $this->otpLimiter()->throw('test');
     }
