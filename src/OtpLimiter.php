@@ -1,6 +1,6 @@
 <?php
 
-namespace Raymon\OtpLimiter;
+namespace BdpRaymon\OtpLimiter;
 
 use Carbon\Carbon;
 use Illuminate\Cache\CacheManager;

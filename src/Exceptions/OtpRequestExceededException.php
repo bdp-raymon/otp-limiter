@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Raymon\OtpLimiter\Exceptions;
+namespace BdpRaymon\OtpLimiter\Exceptions;
 
 use Exception;
 use Illuminate\Http\JsonResponse;

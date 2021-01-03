@@ -1,13 +1,13 @@
 <?php
 
 
-namespace Raymon\OtpLimiter\Tests;
+namespace BdpRaymon\OtpLimiter\Tests;
 
 
 use Orchestra\Testbench\TestCase;
-use Raymon\OtpLimiter\Exceptions\OtpRequestExceededException;
-use Raymon\OtpLimiter\OtpLimiter;
-use Raymon\OtpLimiter\OtpLimiterServiceProvider;
+use BdpRaymon\OtpLimiter\Exceptions\OtpRequestExceededException;
+use BdpRaymon\OtpLimiter\OtpLimiter;
+use BdpRaymon\OtpLimiter\OtpLimiterServiceProvider;
 
 class OtpLimiterTest extends TestCase
 {

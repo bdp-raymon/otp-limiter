@@ -5,5 +5,5 @@ return [
     'otp-rate-limiter' => env('OTP_RATE_LIMITER', 60 * 3),
 
     // exception that will throw if otp limited
-    'exception' => \Raymon\OtpLimiter\Exceptions\OtpRequestExceededException::class
+    'exception' => \BdpRaymon\OtpLimiter\Exceptions\OtpRequestExceededException::class
 ];

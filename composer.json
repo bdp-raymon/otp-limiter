@@ -1,5 +1,5 @@
 {
-    "name": "raymon/otp-limiter",
+    "name": "bdp-raymon/otp-limiter",
     "description": "Otp Limiter",
     "keywords": [
         "raymon",
@@ -27,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Raymon\\OtpLimiter\\": "src"
+            "BdpRaymon\\OtpLimiter\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Raymon\\OtpLimiter\\Tests\\": "tests"
+            "BdpRaymon\\OtpLimiter\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -46,11 +46,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Raymon\\OtpLimiter\\OtpLimiterServiceProvider"
-            ],
-            "aliases": {
-                "OtpLimiter": "Raymon\\OtpLimiter\\OtpLimiterFacade"
-            }
+                "BdpRaymon\\OtpLimiter\\OtpLimiterServiceProvider"
+            ]
         }
     }
 }

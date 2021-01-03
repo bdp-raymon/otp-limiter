@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Raymon\OtpLimiter\Middleware;
+namespace BdpRaymon\OtpLimiter\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Raymon\OtpLimiter\OtpLimiter;
+use BdpRaymon\OtpLimiter\OtpLimiter;
 
 class OtpLimiterMiddleware
 {

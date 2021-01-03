@@ -1,15 +1,15 @@
 <?php
 
 
-namespace Raymon\OtpLimiter\Tests;
+namespace BdpRaymon\OtpLimiter\Tests;
 
 
 use Illuminate\Http\Request;
 use Orchestra\Testbench\TestCase;
-use Raymon\OtpLimiter\Exceptions\OtpRequestExceededException;
-use Raymon\OtpLimiter\Middleware\OtpLimiterMiddleware;
-use Raymon\OtpLimiter\OtpLimiter;
-use Raymon\OtpLimiter\OtpLimiterServiceProvider;
+use BdpRaymon\OtpLimiter\Exceptions\OtpRequestExceededException;
+use BdpRaymon\OtpLimiter\Middleware\OtpLimiterMiddleware;
+use BdpRaymon\OtpLimiter\OtpLimiter;
+use BdpRaymon\OtpLimiter\OtpLimiterServiceProvider;
 
 class MiddlewareTest extends TestCase
 {
