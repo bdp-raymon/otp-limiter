@@ -2,7 +2,9 @@
 
 namespace BdpRaymon\OtpLimiter;
 
+use Illuminate\Container\Container;
 use Illuminate\Support\ServiceProvider;
+
 
 class OtpLimiterServiceProvider extends ServiceProvider
 {
@@ -22,7 +24,7 @@ class OtpLimiterServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'otp-limiter');
 
         // Register the main class to use with the facade
-        $this->app->bind('otp-limiter', function ($app) {
+        $this->app->bind('otp-limiter', function (Container $app) {
             return new OtpLimiter(
                 $app->make('cache'),
                 $app->make('config')

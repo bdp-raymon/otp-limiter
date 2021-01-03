@@ -13,7 +13,7 @@ class OtpRequestExceededException extends Exception
 
     protected int $remainingTime;
 
-    public function __construct($key, $remainingTime)
+    public function __construct(string $key, int $remainingTime)
     {
         parent::__construct("Otp rate limit request for {$key} exceeded, for new request you should wait {$remainingTime} seconds");
         $this->key = $key;

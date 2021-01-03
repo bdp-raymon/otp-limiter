@@ -4,6 +4,7 @@
 namespace BdpRaymon\OtpLimiter\Middleware;
 
 use Closure;
+use Exception;
 use Illuminate\Http\Request;
 use BdpRaymon\OtpLimiter\OtpLimiter;
 
@@ -17,6 +18,12 @@ class OtpLimiterMiddleware
         $this->otpLimiter = $otpLimiter;
     }
 
+    /**
+     * @param Request $request
+     * @param Closure $next
+     * @param array ...$params
+     * @throws Exception
+     */
     public function handle(Request $request, Closure $next, ...$params): void
     {
         $key = $this->getKey($request, $params);

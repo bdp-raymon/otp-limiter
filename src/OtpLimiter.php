@@ -3,17 +3,14 @@
 namespace BdpRaymon\OtpLimiter;
 
 use Carbon\Carbon;
+use Exception;
 use Illuminate\Cache\CacheManager;
 use Illuminate\Config\Repository;
 use Illuminate\Support\Arr;
 
 class OtpLimiter
 {
-    protected string $key;
-
     protected string $suffix = 'otp-limiter';
-
-    protected int $rate;
 
     protected CacheManager $cacheManager;
 
@@ -57,8 +54,11 @@ class OtpLimiter
 
     public function set(string $key): bool
     {
-        $time = now()->addSeconds($this->rate());
-        return $this->cacheManager->set($this->key($key), $time, $time);
+        return $this->cacheManager->set(
+            $this->key($key),
+            now()->addSeconds($this->rate()),
+            $this->rate()
+        );
     }
 
     protected function rate(): int
@@ -66,6 +66,11 @@ class OtpLimiter
         return Arr::get($this->config, 'custom.otp-rate-limiter', 60 * 3);
     }
 
+    /**
+     * @param string $key
+     * @throws Exception
+     * @return void
+     */
     public function throw(string $key): void
     {
         $exception = $this->getException();
@@ -74,7 +79,11 @@ class OtpLimiter
             return;
         }
 
-        throw new $exception($key, $this->remained($key));
+        $throwable = new $exception($key, $this->remained($key));
+
+        if ($throwable instanceof Exception) {
+            throw $throwable;
+        }
     }
 
     protected function getException(): ?string
