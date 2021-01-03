@@ -1,10 +1,10 @@
 # Very short description of the package
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/raymon/otp-limiter.svg?style=flat-square)](https://packagist.org/packages/raymon/otp-limiter)
-[![Build Status](https://img.shields.io/travis/raymon/otp-limiter/master.svg?style=flat-square)](https://travis-ci.org/raymon/otp-limiter)
-[![Quality Score](https://img.shields.io/scrutinizer/g/raymon/otp-limiter.svg?style=flat-square)](https://scrutinizer-ci.com/g/raymon/otp-limiter)
+[![Build Status](https://img.shields.io/travis/bdp-raymon/otp-limiter/master.svg?style=flat-square)](https://travis-ci.org/bdp-raymon/otp-limiter)
+[![Quality Score](https://img.shields.io/scrutinizer/g/bdp-raymon/otp-limiter.svg?style=flat-square)](https://scrutinizer-ci.com/g/bdp-raymon/otp-limiter)
 [![Total Downloads](https://img.shields.io/packagist/dt/raymon/otp-limiter.svg?style=flat-square)](https://packagist.org/packages/raymon/otp-limiter)
-[![Type Coverage](https://shepherd.dev/github/raymon/otp-limiter/coverage.svg)](https://shepherd.dev/github/raymon/otp-limiter)
+[![Type Coverage](https://shepherd.dev/github/bdp-raymon/otp-limiter/coverage.svg)](https://shepherd.dev/github/bdp-raymon/otp-limiter)
 
 This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
 
